@@ -158,7 +158,8 @@ function renderWorkflowPage({ config = {} } = {}) {
             <div class="step"><div><div class="step-title">查找共享知识库</div><div class="api-name">openapi/wiki/v1/search_knowledge_base</div></div></div>
             <div class="step"><div><div class="step-title">不存在时创建共享知识库</div><div class="api-name">openapi/wiki/v1/create_knowledge_base</div></div></div>
             <div class="step"><div><div class="step-title">重复推送覆盖</div><div class="api-name">同一 noteUid 已存在时复用本地记录的 IMA note_id，并调用 openapi/note/v1/append_doc 更新已有笔记。</div></div></div>
-            <div class="step"><div><div class="step-title">办公本内容转换为 Markdown 笔记</div><div class="api-name">openapi/note/v1/import_doc</div></div></div>
+            <div class="step"><div><div class="step-title">本地将 JSON 转换成 Markdown</div><div class="api-name">在本地服务中把办公本会议 JSON 整理为 Markdown，不调用 IMA 接口。</div></div></div>
+            <div class="step"><div><div class="step-title">办公本内容转换为 Markdown，写入IMA笔记</div><div class="api-name">openapi/note/v1/import_doc</div></div></div>
             <div class="step"><div><div class="step-title">将笔记绑定到共享知识库</div><div class="api-name">openapi/wiki/v1/add_knowledge</div></div></div>
           </div>
         </section>

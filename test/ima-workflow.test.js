@@ -400,6 +400,8 @@ test("workflow page only exposes switch, auth, initialization and API step names
   assert.doesNotMatch(html, /部门管理|部门写入|部门知识库|文件夹|推送记录|操作日志/);
   assert.match(html, /判断是否为会议内容/);
   assert.match(html, /重复推送覆盖/);
+  assert.match(html, /本地将 JSON 转换成 Markdown/);
+  assert.match(html, /办公本内容转换为 Markdown，写入IMA笔记/);
   assert.match(html, /search_knowledge_base/);
   assert.match(html, /create_knowledge_base/);
   assert.match(html, /import_doc/);

@@ -146,9 +146,9 @@ function renderWorkflowPage({ config = {} } = {}) {
             </div>
             <div class="actions">
               <button id="saveAuth" class="btn primary" type="button">保存鉴权</button>
-              <button id="initialize" class="btn" type="button">初始化共享知识库</button>
+              <button id="initialize" class="btn" type="button">检查 IMA 连接</button>
             </div>
-            <div id="status" class="status-line">目标知识库：${escapeHtml(safe.knowledgeBaseName || ENTERPRISE_KNOWLEDGE_BASE_NAME)}；状态：${safe.knowledgeBaseReady ? "已就绪" : "等待初始化"}</div>
+            <div id="status" class="status-line">目标知识库：${escapeHtml(safe.knowledgeBaseName || ENTERPRISE_KNOWLEDGE_BASE_NAME)}；状态：${safe.knowledgeBaseReady ? "连接正常" : "等待检查"}</div>
           </div>
         </section>
         <section class="content-card">
@@ -218,8 +218,8 @@ function renderWorkflowPage({ config = {} } = {}) {
       try {
         await saveConfig();
         const data = await post("/api/initialize", {});
-        els.status.textContent = "目标知识库：" + data.knowledgeBase.name + "；状态：已就绪";
-        showBanner("共享知识库已初始化");
+        els.status.textContent = "目标知识库：" + data.knowledgeBase.name + "；状态：连接正常";
+        showBanner("IMA 连接检查通过");
       } catch (error) {
         showBanner(error.message);
       }

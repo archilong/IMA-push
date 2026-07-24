@@ -391,6 +391,9 @@ test("workflow page only exposes switch, auth, initialization and API step names
   assert.match(html, /IMA数据推送/);
   assert.match(html, /class="nav-item active"/);
   assert.match(html, /class="content-card"/);
+  assert.match(html, /检查 IMA 连接/);
+  assert.match(html, /连接正常/);
+  assert.doesNotMatch(html, /初始化共享知识库|等待初始化|共享知识库已初始化/);
   assert.match(html, /background:\s*#f5f6f8/);
   assert.match(html, /--sidebar:\s*#0f172a/);
   assert.doesNotMatch(html, /IMA_BASE_URL|imaBaseUrl|API 地址/);

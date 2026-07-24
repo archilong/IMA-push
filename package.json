@@ -1,0 +1,14 @@
+{
+  "name": "ima-officebook-workflow",
+  "version": "0.1.0",
+  "private": true,
+  "type": "commonjs",
+  "description": "Standalone IMA workflow for pushing officebook meeting Markdown into a shared knowledge base.",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
